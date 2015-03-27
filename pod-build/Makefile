@@ -170,30 +170,17 @@ tmp/fast:
 .PHONY : tmp/fast
 
 #=============================================================================
-# Target rules for targets named apriltags_demo
+# Target rules for targets named cerestags_demo
 
 # Build rule for target.
-apriltags_demo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 apriltags_demo
-.PHONY : apriltags_demo
+cerestags_demo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cerestags_demo
+.PHONY : cerestags_demo
 
 # fast build rule for target.
-apriltags_demo/fast:
-	$(MAKE) -f example/CMakeFiles/apriltags_demo.dir/build.make example/CMakeFiles/apriltags_demo.dir/build
-.PHONY : apriltags_demo/fast
-
-#=============================================================================
-# Target rules for targets named imu
-
-# Build rule for target.
-imu: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 imu
-.PHONY : imu
-
-# fast build rule for target.
-imu/fast:
-	$(MAKE) -f example/CMakeFiles/imu.dir/build.make example/CMakeFiles/imu.dir/build
-.PHONY : imu/fast
+cerestags_demo/fast:
+	$(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/build
+.PHONY : cerestags_demo/fast
 
 src/Edge.o: src/Edge.cc.o
 .PHONY : src/Edge.o
@@ -545,8 +532,7 @@ help:
 	@echo "... tmp"
 	@echo "... list_install_components"
 	@echo "... install/local"
-	@echo "... imu"
-	@echo "... apriltags_demo"
+	@echo "... cerestags_demo"
 	@echo "... src/Edge.o"
 	@echo "... src/Edge.i"
 	@echo "... src/Edge.s"

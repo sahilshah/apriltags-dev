@@ -144,40 +144,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-example/CMakeFiles/apriltags_demo.dir/rule:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/apriltags_demo.dir/rule
-.PHONY : example/CMakeFiles/apriltags_demo.dir/rule
+example/CMakeFiles/cerestags_demo.dir/rule:
+	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/cerestags_demo.dir/rule
+.PHONY : example/CMakeFiles/cerestags_demo.dir/rule
 
 # Convenience name for target.
-apriltags_demo: example/CMakeFiles/apriltags_demo.dir/rule
-.PHONY : apriltags_demo
+cerestags_demo: example/CMakeFiles/cerestags_demo.dir/rule
+.PHONY : cerestags_demo
 
 # fast build rule for target.
-apriltags_demo/fast:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/apriltags_demo.dir/build.make example/CMakeFiles/apriltags_demo.dir/build
-.PHONY : apriltags_demo/fast
-
-# Convenience name for target.
-example/CMakeFiles/imu.dir/rule:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/imu.dir/rule
-.PHONY : example/CMakeFiles/imu.dir/rule
-
-# Convenience name for target.
-imu: example/CMakeFiles/imu.dir/rule
-.PHONY : imu
-
-# fast build rule for target.
-imu/fast:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/imu.dir/build.make example/CMakeFiles/imu.dir/build
-.PHONY : imu/fast
+cerestags_demo/fast:
+	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/build
+.PHONY : cerestags_demo/fast
 
 Serial.o: Serial.cpp.o
 .PHONY : Serial.o
 
 # target to build an object file
 Serial.cpp.o:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/apriltags_demo.dir/build.make example/CMakeFiles/apriltags_demo.dir/Serial.cpp.o
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/imu.dir/build.make example/CMakeFiles/imu.dir/Serial.cpp.o
+	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o
 .PHONY : Serial.cpp.o
 
 Serial.i: Serial.cpp.i
@@ -185,8 +170,7 @@ Serial.i: Serial.cpp.i
 
 # target to preprocess a source file
 Serial.cpp.i:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/apriltags_demo.dir/build.make example/CMakeFiles/apriltags_demo.dir/Serial.cpp.i
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/imu.dir/build.make example/CMakeFiles/imu.dir/Serial.cpp.i
+	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/Serial.cpp.i
 .PHONY : Serial.cpp.i
 
 Serial.s: Serial.cpp.s
@@ -194,57 +178,32 @@ Serial.s: Serial.cpp.s
 
 # target to generate assembly for a file
 Serial.cpp.s:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/apriltags_demo.dir/build.make example/CMakeFiles/apriltags_demo.dir/Serial.cpp.s
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/imu.dir/build.make example/CMakeFiles/imu.dir/Serial.cpp.s
+	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/Serial.cpp.s
 .PHONY : Serial.cpp.s
 
-apriltags_demo.o: apriltags_demo.cpp.o
-.PHONY : apriltags_demo.o
+cerestags_demo.o: cerestags_demo.cpp.o
+.PHONY : cerestags_demo.o
 
 # target to build an object file
-apriltags_demo.cpp.o:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/apriltags_demo.dir/build.make example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o
-.PHONY : apriltags_demo.cpp.o
+cerestags_demo.cpp.o:
+	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o
+.PHONY : cerestags_demo.cpp.o
 
-apriltags_demo.i: apriltags_demo.cpp.i
-.PHONY : apriltags_demo.i
-
-# target to preprocess a source file
-apriltags_demo.cpp.i:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/apriltags_demo.dir/build.make example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.i
-.PHONY : apriltags_demo.cpp.i
-
-apriltags_demo.s: apriltags_demo.cpp.s
-.PHONY : apriltags_demo.s
-
-# target to generate assembly for a file
-apriltags_demo.cpp.s:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/apriltags_demo.dir/build.make example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.s
-.PHONY : apriltags_demo.cpp.s
-
-imu.o: imu.cpp.o
-.PHONY : imu.o
-
-# target to build an object file
-imu.cpp.o:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/imu.dir/build.make example/CMakeFiles/imu.dir/imu.cpp.o
-.PHONY : imu.cpp.o
-
-imu.i: imu.cpp.i
-.PHONY : imu.i
+cerestags_demo.i: cerestags_demo.cpp.i
+.PHONY : cerestags_demo.i
 
 # target to preprocess a source file
-imu.cpp.i:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/imu.dir/build.make example/CMakeFiles/imu.dir/imu.cpp.i
-.PHONY : imu.cpp.i
+cerestags_demo.cpp.i:
+	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.i
+.PHONY : cerestags_demo.cpp.i
 
-imu.s: imu.cpp.s
-.PHONY : imu.s
+cerestags_demo.s: cerestags_demo.cpp.s
+.PHONY : cerestags_demo.s
 
 # target to generate assembly for a file
-imu.cpp.s:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/imu.dir/build.make example/CMakeFiles/imu.dir/imu.cpp.s
-.PHONY : imu.cpp.s
+cerestags_demo.cpp.s:
+	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.s
+.PHONY : cerestags_demo.cpp.s
 
 # Help Target
 help:
@@ -252,23 +211,19 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... imu"
 	@echo "... install/strip"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... apriltags_demo"
+	@echo "... cerestags_demo"
 	@echo "... install/local"
 	@echo "... Serial.o"
 	@echo "... Serial.i"
 	@echo "... Serial.s"
-	@echo "... apriltags_demo.o"
-	@echo "... apriltags_demo.i"
-	@echo "... apriltags_demo.s"
-	@echo "... imu.o"
-	@echo "... imu.i"
-	@echo "... imu.s"
+	@echo "... cerestags_demo.o"
+	@echo "... cerestags_demo.i"
+	@echo "... cerestags_demo.s"
 .PHONY : help
 
 

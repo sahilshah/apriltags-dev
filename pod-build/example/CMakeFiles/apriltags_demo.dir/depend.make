@@ -4,7 +4,6 @@
 example/CMakeFiles/apriltags_demo.dir/Serial.cpp.o: ../example/Serial.cpp
 example/CMakeFiles/apriltags_demo.dir/Serial.cpp.o: ../example/Serial.h
 
-example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: .././AprilTags/Tag64.h
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: ../example/Serial.h
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: ../example/apriltags_demo.cpp
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: /usr/local/Cellar/eigen/3.2.4/include/eigen3/Eigen/Cholesky
@@ -243,6 +242,7 @@ example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: include/AprilTags/Ta
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: include/AprilTags/Tag25h9.h
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: include/AprilTags/Tag36h11.h
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: include/AprilTags/Tag36h9.h
+example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: include/AprilTags/Tag64.h
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: include/AprilTags/TagDetection.h
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: include/AprilTags/TagDetector.h
 example/CMakeFiles/apriltags_demo.dir/apriltags_demo.cpp.o: include/AprilTags/TagFamily.h

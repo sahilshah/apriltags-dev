@@ -56,6 +56,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/AprilTags/Tag36h11.h"
     "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/AprilTags/Tag36h11_other.h"
     "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/AprilTags/Tag36h9.h"
+    "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/AprilTags/Tag64.h"
     "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/AprilTags/TagDetection.h"
     "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/AprilTags/TagDetector.h"
     "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/AprilTags/TagFamily.h"

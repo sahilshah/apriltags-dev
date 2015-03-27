@@ -20,7 +20,7 @@ using namespace std;
 #include <vector>
 #include <list>
 #include <sys/time.h>
-
+#include <algorithm>
 const string usage = "\n"
   "Usage:\n"
   "  apriltags_demo [OPTION...] [IMG1 [IMG2...]]\n"
@@ -70,6 +70,8 @@ const string intro = "\n"
 #include "AprilTags/Tag25h9.h"
 #include "AprilTags/Tag36h9.h"
 #include "AprilTags/Tag36h11.h"
+#include "AprilTags/Tag64.h"
+
 
 
 // Needed for getopt / command line options processing
@@ -127,7 +129,7 @@ void wRo_to_euler(const Eigen::Matrix3d& wRo, double& yaw, double& pitch, double
 class Demo {
 
   AprilTags::TagDetector* m_tagDetector;
-  AprilTags::TagCodes m_tagCodes;
+  AprilTags::TagCodes m_tagCodes,m_ann_tagCodes;
 
   bool m_draw; // draw image and April tag detections?
   bool m_arduino; // send tag detections to serial port?
@@ -160,6 +162,7 @@ public:
     // default settings, most can be modified through command line options (see below)
     m_tagDetector(NULL),
     m_tagCodes(AprilTags::tagCodes36h11),
+    m_ann_tagCodes(AprilTags::tagCodes64),
 
     m_draw(true),
     m_arduino(false),
@@ -280,7 +283,7 @@ public:
   }
 
   void setup() {
-    m_tagDetector = new AprilTags::TagDetector(m_tagCodes);
+    m_tagDetector = new AprilTags::TagDetector(m_tagCodes,m_ann_tagCodes);
 
     // prepare window for drawing the camera images
     if (m_draw) {
@@ -344,8 +347,8 @@ public:
   }
 
   void print_detection(AprilTags::TagDetection& detection) const {
-    cout << "  Id: " << detection.id
-         << " (Hamming: " << detection.hammingDistance << ")";
+    // cout << "  Id: " << detection.id
+         // << " (Hamming: " << detection.hammingDistance << ")";
 
     // recovering the relative pose of a tag:
 
@@ -375,6 +378,14 @@ public:
          << ", pitch=" << pitch
          << ", roll=" << roll
          << endl;
+    // cout << translation.norm()
+    //      << ", " << translation(0)
+    //      << ", " << translation(1)
+    //      << ", " << translation(2)
+    //      << ", " << yaw
+    //      << ", " << pitch
+    //      << ", " << roll
+    //      << endl;
 
     // Also note that for SLAM/multi-view application it is better to
     // use reprojection error of corner points, because the noise in
@@ -398,12 +409,19 @@ public:
     vector<AprilTags::TagDetection> detections = m_tagDetector->extractTags(image_gray);
     if (m_timing) {
       double dt = tic()-t0;
-      cout << "Extracting tags took " << dt << " seconds." << endl;
+      // cout << "Extracting tags took " << dt << " seconds." << endl;
     }
 
     // print out each detection
-    cout << detections.size() << " tags detected:" << endl;
-    for (int i=0; i<detections.size(); i++) {
+    // cout << detections.size() << " tags detected:" << endl;
+    // for (int i=0; i<detections.size(); i++) {
+    int x;
+    if(detections.size() > 0)
+      x = 1;
+    else 
+      x = 0;
+    for (int i=0; i<x; i++) {
+    // for (int i=0; i<; i++) {
       print_detection(detections[i]);
     }
 
@@ -476,7 +494,7 @@ public:
       frame++;
       if (frame % 10 == 0) {
         double t = tic();
-        cout << "  " << 10./(t-last_t) << " fps" << endl;
+        // cout << "  " << 10./(t-last_t) << " fps" << endl;
         last_t = t;
       }
 
@@ -498,7 +516,7 @@ int main(int argc, char* argv[]) {
   demo.setup();
 
   if (demo.isVideo()) {
-    cout << "Processing video" << endl;
+    // cout << "Processing video" << endl;
 
     // setup image source, window for drawing, serial port...
     demo.setupVideo();
@@ -507,7 +525,7 @@ int main(int argc, char* argv[]) {
     demo.loop();
 
   } else {
-    cout << "Processing image" << endl;
+    // cout << "Processing image" << endl;
 
     // process single image
     demo.loadImages();

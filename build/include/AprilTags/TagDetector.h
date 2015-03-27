@@ -15,10 +15,14 @@ class TagDetector {
 public:
 	
 	const TagFamily thisTagFamily;
+	const TagFamily annTagFamily;
 
 	//! Constructor
   // note: TagFamily is instantiated here from TagCodes
-	TagDetector(const TagCodes& tagCodes) : thisTagFamily(tagCodes) {}
+	TagDetector(const TagCodes& tagCodes, const TagCodes& annTagCodes): 
+		thisTagFamily(tagCodes),
+		annTagFamily(annTagCodes) 
+		{}
 	
 	std::vector<TagDetection> extractTags(const cv::Mat& image);
 	

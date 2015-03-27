@@ -122,13 +122,11 @@ clean: CMakeFiles/tmp.dir/clean
 # Directory level rules for directory example
 
 # Convenience name for "all" pass in the directory.
-example/all: example/CMakeFiles/apriltags_demo.dir/all
-example/all: example/CMakeFiles/imu.dir/all
+example/all: example/CMakeFiles/cerestags_demo.dir/all
 .PHONY : example/all
 
 # Convenience name for "clean" pass in the directory.
-example/clean: example/CMakeFiles/apriltags_demo.dir/clean
-example/clean: example/CMakeFiles/imu.dir/clean
+example/clean: example/CMakeFiles/cerestags_demo.dir/clean
 .PHONY : example/clean
 
 # Convenience name for "preinstall" pass in the directory.
@@ -136,73 +134,38 @@ example/preinstall:
 .PHONY : example/preinstall
 
 #=============================================================================
-# Target rules for target example/CMakeFiles/apriltags_demo.dir
+# Target rules for target example/CMakeFiles/cerestags_demo.dir
 
 # All Build rule for target.
-example/CMakeFiles/apriltags_demo.dir/all: CMakeFiles/apriltags.dir/all
-	$(MAKE) -f example/CMakeFiles/apriltags_demo.dir/build.make example/CMakeFiles/apriltags_demo.dir/depend
-	$(MAKE) -f example/CMakeFiles/apriltags_demo.dir/build.make example/CMakeFiles/apriltags_demo.dir/build
+example/CMakeFiles/cerestags_demo.dir/all: CMakeFiles/apriltags.dir/all
+	$(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/depend
+	$(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/CMakeFiles  15 16
-	@echo "Built target apriltags_demo"
-.PHONY : example/CMakeFiles/apriltags_demo.dir/all
+	@echo "Built target cerestags_demo"
+.PHONY : example/CMakeFiles/cerestags_demo.dir/all
 
 # Include target in all.
-all: example/CMakeFiles/apriltags_demo.dir/all
+all: example/CMakeFiles/cerestags_demo.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-example/CMakeFiles/apriltags_demo.dir/rule: cmake_check_build_system
+example/CMakeFiles/cerestags_demo.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/CMakeFiles 16
-	$(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/apriltags_demo.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/cerestags_demo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/CMakeFiles 0
-.PHONY : example/CMakeFiles/apriltags_demo.dir/rule
+.PHONY : example/CMakeFiles/cerestags_demo.dir/rule
 
 # Convenience name for target.
-apriltags_demo: example/CMakeFiles/apriltags_demo.dir/rule
-.PHONY : apriltags_demo
+cerestags_demo: example/CMakeFiles/cerestags_demo.dir/rule
+.PHONY : cerestags_demo
 
 # clean rule for target.
-example/CMakeFiles/apriltags_demo.dir/clean:
-	$(MAKE) -f example/CMakeFiles/apriltags_demo.dir/build.make example/CMakeFiles/apriltags_demo.dir/clean
-.PHONY : example/CMakeFiles/apriltags_demo.dir/clean
+example/CMakeFiles/cerestags_demo.dir/clean:
+	$(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/clean
+.PHONY : example/CMakeFiles/cerestags_demo.dir/clean
 
 # clean rule for target.
-clean: example/CMakeFiles/apriltags_demo.dir/clean
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target example/CMakeFiles/imu.dir
-
-# All Build rule for target.
-example/CMakeFiles/imu.dir/all: CMakeFiles/apriltags.dir/all
-	$(MAKE) -f example/CMakeFiles/imu.dir/build.make example/CMakeFiles/imu.dir/depend
-	$(MAKE) -f example/CMakeFiles/imu.dir/build.make example/CMakeFiles/imu.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/CMakeFiles  17 18
-	@echo "Built target imu"
-.PHONY : example/CMakeFiles/imu.dir/all
-
-# Include target in all.
-all: example/CMakeFiles/imu.dir/all
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-example/CMakeFiles/imu.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/CMakeFiles 16
-	$(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/imu.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/CMakeFiles 0
-.PHONY : example/CMakeFiles/imu.dir/rule
-
-# Convenience name for target.
-imu: example/CMakeFiles/imu.dir/rule
-.PHONY : imu
-
-# clean rule for target.
-example/CMakeFiles/imu.dir/clean:
-	$(MAKE) -f example/CMakeFiles/imu.dir/build.make example/CMakeFiles/imu.dir/clean
-.PHONY : example/CMakeFiles/imu.dir/clean
-
-# clean rule for target.
-clean: example/CMakeFiles/imu.dir/clean
+clean: example/CMakeFiles/cerestags_demo.dir/clean
 .PHONY : clean
 
 #=============================================================================

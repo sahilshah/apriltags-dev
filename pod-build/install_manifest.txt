@@ -18,11 +18,11 @@
 /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/include/AprilTags/Tag36h11.h
 /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/include/AprilTags/Tag36h11_other.h
 /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/include/AprilTags/Tag36h9.h
+/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/include/AprilTags/Tag64.h
 /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/include/AprilTags/TagDetection.h
 /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/include/AprilTags/TagDetector.h
 /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/include/AprilTags/TagFamily.h
 /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/include/AprilTags/UnionFindSimple.h
 /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/include/AprilTags/XYWeight.h
 /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/lib/pkgconfig/apriltags.pc
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/bin/apriltags_demo
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/bin/imu
+/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/bin/cerestags_demo

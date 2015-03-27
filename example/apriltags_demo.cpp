@@ -131,6 +131,7 @@ class Demo {
   AprilTags::TagDetector* m_tagDetector;
   AprilTags::TagCodes m_tagCodes;
 
+
   bool m_draw; // draw image and April tag detections?
   bool m_arduino; // send tag detections to serial port?
   bool m_timing; // print timing information for each tag extraction call
@@ -161,7 +162,7 @@ public:
   Demo() :
     // default settings, most can be modified through command line options (see below)
     m_tagDetector(NULL),
-    m_tagCodes(AprilTags::tagCodes64),
+    m_tagCodes(AprilTags::tagCodes36h11),
 
     m_draw(true),
     m_arduino(false),
