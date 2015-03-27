@@ -70,6 +70,8 @@ const string intro = "\n"
 #include "AprilTags/Tag25h9.h"
 #include "AprilTags/Tag36h9.h"
 #include "AprilTags/Tag36h11.h"
+#include "AprilTags/Tag64.h"
+
 
 
 // Needed for getopt / command line options processing
@@ -159,7 +161,7 @@ public:
   Demo() :
     // default settings, most can be modified through command line options (see below)
     m_tagDetector(NULL),
-    m_tagCodes(AprilTags::tagCodes36h11),
+    m_tagCodes(AprilTags::tagCodes64),
 
     m_draw(true),
     m_arduino(false),
