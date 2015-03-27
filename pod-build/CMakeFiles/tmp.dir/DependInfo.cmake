@@ -16,7 +16,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "/opt/local/include"
   "/usr/local/include/opencv"
   "/usr/local/include"
-  "/usr/local/Cellar/eigen/3.2.3/include/eigen3"
+  "/usr/local/Cellar/eigen/3.2.4/include/eigen3"
   )
 set(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})
 set(CMAKE_Fortran_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

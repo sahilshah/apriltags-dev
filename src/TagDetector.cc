@@ -24,7 +24,7 @@
 
 #include "AprilTags/TagDetector.h"
 
-//#define DEBUG_APRIL
+#define DEBUG_APRIL
 
 #ifdef DEBUG_APRIL
 #include <opencv/cv.h>
@@ -170,7 +170,7 @@ namespace AprilTags {
 #ifdef DEBUG_APRIL
   int height_ = fimSeg.getHeight();
   int width_  = fimSeg.getWidth();
-  cv::Mat image(height_, width_, CV_8UC3);
+  cv::Mat dbg_image(height_, width_, CV_8UC3);
   {
     for (int y=0; y<height_; y++) {
       for (int x=0; x<width_; x++) {
@@ -182,7 +182,7 @@ namespace AprilTags {
         for (int k=0; k<3; k++) {
           v(k) = val;
         }
-        image.at<cv::Vec3b>(y, x) = v;
+        dbg_image.at<cv::Vec3b>(y, x) = v;
       }
     }
   }
@@ -404,21 +404,21 @@ namespace AprilTags {
       std::pair<float, float> p2 = quad.quadPoints[1];
       std::pair<float, float> p3 = quad.quadPoints[2];
       std::pair<float, float> p4 = quad.quadPoints[3];
-      cv::line(image, cv::Point2f(p1.first, p1.second), cv::Point2f(p2.first, p2.second), cv::Scalar(0,0,255,0) );
-      cv::line(image, cv::Point2f(p2.first, p2.second), cv::Point2f(p3.first, p3.second), cv::Scalar(0,0,255,0) );
-      cv::line(image, cv::Point2f(p3.first, p3.second), cv::Point2f(p4.first, p4.second), cv::Scalar(0,0,255,0) );
-      cv::line(image, cv::Point2f(p4.first, p4.second), cv::Point2f(p1.first, p1.second), cv::Scalar(0,0,255,0) );
+      cv::line(dbg_image, cv::Point2f(p1.first, p1.second), cv::Point2f(p2.first, p2.second), cv::Scalar(0,0,255,0) );
+      cv::line(dbg_image, cv::Point2f(p2.first, p2.second), cv::Point2f(p3.first, p3.second), cv::Scalar(0,0,255,0) );
+      cv::line(dbg_image, cv::Point2f(p3.first, p3.second), cv::Point2f(p4.first, p4.second), cv::Scalar(0,0,255,0) );
+      cv::line(dbg_image, cv::Point2f(p4.first, p4.second), cv::Point2f(p1.first, p1.second), cv::Scalar(0,0,255,0) );
 
       p1 = quad.interpolate(-1,-1);
       p2 = quad.interpolate(-1,1);
       p3 = quad.interpolate(1,1);
       p4 = quad.interpolate(1,-1);
-      cv::circle(image, cv::Point2f(p1.first, p1.second), 3, cv::Scalar(0,255,0,0), 1);
-      cv::circle(image, cv::Point2f(p2.first, p2.second), 3, cv::Scalar(0,255,0,0), 1);
-      cv::circle(image, cv::Point2f(p3.first, p3.second), 3, cv::Scalar(0,255,0,0), 1);
-      cv::circle(image, cv::Point2f(p4.first, p4.second), 3, cv::Scalar(0,255,0,0), 1);
+      cv::circle(dbg_image, cv::Point2f(p1.first, p1.second), 3, cv::Scalar(0,255,0,0), 1);
+      cv::circle(dbg_image, cv::Point2f(p2.first, p2.second), 3, cv::Scalar(0,255,0,0), 1);
+      cv::circle(dbg_image, cv::Point2f(p3.first, p3.second), 3, cv::Scalar(0,255,0,0), 1);
+      cv::circle(dbg_image, cv::Point2f(p4.first, p4.second), 3, cv::Scalar(0,255,0,0), 1);
     }
-    cv::imshow("debug_april", image);
+    // cv::imshow("debug_april", dbg_image);
   }
 #endif
 
@@ -439,17 +439,17 @@ namespace AprilTags {
     for (int iy = -1; iy <= dd; iy++) {
       float y = (iy + 0.5f) / dd;
       for (int ix = -1; ix <= dd; ix++) {
-	float x = (ix + 0.5f) / dd;
-	std::pair<float,float> pxy = quad.interpolate01(x, y);
-	int irx = (int) (pxy.first + 0.5);
-	int iry = (int) (pxy.second + 0.5);
-	if (irx < 0 || irx >= width || iry < 0 || iry >= height)
-	  continue;
-	float v = fim.get(irx, iry);
-	if (iy == -1 || iy == dd || ix == -1 || ix == dd)
-	  whiteModel.addObservation(x, y, v);
-	else if (iy == 0 || iy == (dd-1) || ix == 0 || ix == (dd-1))
-	  blackModel.addObservation(x, y, v);
+      	float x = (ix + 0.5f) / dd;
+      	std::pair<float,float> pxy = quad.interpolate01(x, y);
+      	int irx = (int) (pxy.first + 0.5);
+      	int iry = (int) (pxy.second + 0.5);
+      	if (irx < 0 || irx >= width || iry < 0 || iry >= height)
+      	  continue;
+      	float v = fim.get(irx, iry);
+      	if (iy == -1 || iy == dd || ix == -1 || ix == dd)
+      	  whiteModel.addObservation(x, y, v);
+      	else if (iy == 0 || iy == (dd-1) || ix == 0 || ix == (dd-1))
+      	  blackModel.addObservation(x, y, v);
       }
     }
 
@@ -458,26 +458,33 @@ namespace AprilTags {
     for ( int iy = thisTagFamily.dimension-1; iy >= 0; iy-- ) {
       float y = (thisTagFamily.blackBorder + iy + 0.5f) / dd;
       for (int ix = 0; ix < thisTagFamily.dimension; ix++ ) {
-	float x = (thisTagFamily.blackBorder + ix + 0.5f) / dd;
-	std::pair<float,float> pxy = quad.interpolate01(x, y);
-	int irx = (int) (pxy.first + 0.5);
-	int iry = (int) (pxy.second + 0.5);
-	if (irx < 0 || irx >= width || iry < 0 || iry >= height) {
-	  // cout << "*** bad:  irx=" << irx << "  iry=" << iry << endl;
-	  bad = true;
-	  continue;
-	}
-	float threshold = (blackModel.interpolate(x,y) + whiteModel.interpolate(x,y)) * 0.5f;
-	float v = fim.get(irx, iry);
-	tagCode = tagCode << 1;
-	if ( v > threshold)
-	  tagCode |= 1;
+ 
+        if( ix > 0 && ix < thisTagFamily.dimension-1 && 
+          iy > 0 && iy < thisTagFamily.dimension-1){
+          tagCode = tagCode << 1;
+          continue;
+        }
+ 
+      	float x = (thisTagFamily.blackBorder + ix + 0.5f) / dd;
+      	std::pair<float,float> pxy = quad.interpolate01(x, y);
+      	int irx = (int) (pxy.first + 0.5);
+      	int iry = (int) (pxy.second + 0.5);
+      	if (irx < 0 || irx >= width || iry < 0 || iry >= height) {
+      	  // cout << "*** bad:  irx=" << irx << "  iry=" << iry << endl;
+      	  bad = true;
+      	  continue;
+      	}
+      	float threshold = (blackModel.interpolate(x,y) + whiteModel.interpolate(x,y)) * 0.5f;
+      	float v = fim.get(irx, iry);
+      	tagCode = tagCode << 1;
+      	if ( v > threshold)
+      	  tagCode |= 1;
 #ifdef DEBUG_APRIL
         {
           if (v>threshold)
-            cv::circle(image, cv::Point2f(irx, iry), 1, cv::Scalar(0,0,255,0), 2);
+            cv::circle(dbg_image, cv::Point2f(irx, iry), 1, cv::Scalar(0,0,255,0), 2);
           else
-            cv::circle(image, cv::Point2f(irx, iry), 1, cv::Scalar(0,255,0,0), 2);
+            cv::circle(dbg_image, cv::Point2f(irx, iry), 1, cv::Scalar(0,255,0,0), 2);
         }
 #endif
       }
@@ -531,7 +538,7 @@ namespace AprilTags {
 
 #ifdef DEBUG_APRIL
   {
-    cv::imshow("debug_april", image);
+    cv::imshow("debug_april", dbg_image);
   }
 #endif
 

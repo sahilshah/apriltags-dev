@@ -1,6 +1,3 @@
-file(REMOVE_RECURSE
-  "CMakeFiles/tmp"
-)
 
 # Per-language clean rules from dependency scanning.
 foreach(lang)
