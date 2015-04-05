@@ -367,19 +367,20 @@ public:
     }
 
     if(detections.size()){
-
       //stack all ps and Ps and solvePnP
       std::vector<cv::Point3f> objPts;
       std::vector<cv::Point2f> imgPts;
-      double s = 0.04/2.;
-      double centre_dist = 7*0.015;
-      int grid_r = 5;
+      double s = 0.105/2.;
+      double centre_dist = 0.3;
       int grid_c = 5;
       double x_c,y_c;  // bottom left AT, x y
       for (int i=0; i<detections.size(); i++) {
-        int num = detections[i].id;    //should start with 0 at bottom left of grid
+        // NOTE: uncomment this in case you want to reject too close ATs
+        // if(detections[i].id % 2)
+        //   continue;
+        int num = detections[i].id-1;    //starts with 1 at top left
         int row = num / grid_c;
-        int col = num % grid_r;
+        int col = num % grid_c;
         x_c = double(col) * centre_dist; 
         y_c = - double(row) * centre_dist; 
 
@@ -399,6 +400,9 @@ public:
 
       }
 
+      if(!objPts.size())
+        return;
+
       cv::Mat rvec, tvec;
       cv::Matx33f cameraMatrix(
                                m_fx, 0, m_px,
@@ -406,8 +410,9 @@ public:
                                0,  0,  1);
       cv::Vec4f distParam(0,0,0,0); // all 0?
       cv::solvePnP(objPts, imgPts, cameraMatrix, distParam, rvec, tvec);
+      // NOTE: can chose between RANSAC and normal solvepPnP. Atm normal works better
       // cv::solvePnPRansac(objPts, imgPts, cameraMatrix, distParam, rvec, tvec,
-      //   false,100,3.0,(0.95 * float(detections.size()) * 4.0));
+      //   false,100,8.0,(0.95 * float(detections.size()) * 4.0));
 
       cv::Mat r;
       cv::Rodrigues(rvec, r);
@@ -421,7 +426,7 @@ public:
               r.at<double>(2,0), r.at<double>(2,1), r.at<double>(2,2);
       double yaw, pitch, roll;
       wRo_to_euler(wRo, yaw, pitch, roll);
-      printf("%d %.4f %.4f %.4f %.4f %.4f %.4f\n", detections.size(),
+      printf("%4d %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f\n", detections.size(),
         new_tvec.at<double>(0), new_tvec.at<double>(1), new_tvec.at<double>(2),
           yaw,pitch,roll);
     }
