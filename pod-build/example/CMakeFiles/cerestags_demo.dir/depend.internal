@@ -238,6 +238,7 @@ example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o
  /usr/local/include/opencv2/video/tracking.hpp
  /usr/local/include/opencv2/video/video.hpp
  include/AprilTags/FloatImage.h
+ include/AprilTags/RunningStats.h
  include/AprilTags/Tag16h5.h
  include/AprilTags/Tag25h7.h
  include/AprilTags/Tag25h9.h

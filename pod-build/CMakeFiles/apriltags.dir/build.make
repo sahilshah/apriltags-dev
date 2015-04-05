@@ -256,9 +256,32 @@ CMakeFiles/apriltags.dir/src/Quad.cc.o.provides: CMakeFiles/apriltags.dir/src/Qu
 
 CMakeFiles/apriltags.dir/src/Quad.cc.o.provides.build: CMakeFiles/apriltags.dir/src/Quad.cc.o
 
+CMakeFiles/apriltags.dir/src/RunningStats.cc.o: CMakeFiles/apriltags.dir/flags.make
+CMakeFiles/apriltags.dir/src/RunningStats.cc.o: ../src/RunningStats.cc
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_10)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/apriltags.dir/src/RunningStats.cc.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/apriltags.dir/src/RunningStats.cc.o -c /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/RunningStats.cc
+
+CMakeFiles/apriltags.dir/src/RunningStats.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/apriltags.dir/src/RunningStats.cc.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/RunningStats.cc > CMakeFiles/apriltags.dir/src/RunningStats.cc.i
+
+CMakeFiles/apriltags.dir/src/RunningStats.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/apriltags.dir/src/RunningStats.cc.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/RunningStats.cc -o CMakeFiles/apriltags.dir/src/RunningStats.cc.s
+
+CMakeFiles/apriltags.dir/src/RunningStats.cc.o.requires:
+.PHONY : CMakeFiles/apriltags.dir/src/RunningStats.cc.o.requires
+
+CMakeFiles/apriltags.dir/src/RunningStats.cc.o.provides: CMakeFiles/apriltags.dir/src/RunningStats.cc.o.requires
+	$(MAKE) -f CMakeFiles/apriltags.dir/build.make CMakeFiles/apriltags.dir/src/RunningStats.cc.o.provides.build
+.PHONY : CMakeFiles/apriltags.dir/src/RunningStats.cc.o.provides
+
+CMakeFiles/apriltags.dir/src/RunningStats.cc.o.provides.build: CMakeFiles/apriltags.dir/src/RunningStats.cc.o
+
 CMakeFiles/apriltags.dir/src/Segment.cc.o: CMakeFiles/apriltags.dir/flags.make
 CMakeFiles/apriltags.dir/src/Segment.cc.o: ../src/Segment.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_10)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_11)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/apriltags.dir/src/Segment.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/apriltags.dir/src/Segment.cc.o -c /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Segment.cc
 
@@ -281,7 +304,7 @@ CMakeFiles/apriltags.dir/src/Segment.cc.o.provides.build: CMakeFiles/apriltags.d
 
 CMakeFiles/apriltags.dir/src/TagDetection.cc.o: CMakeFiles/apriltags.dir/flags.make
 CMakeFiles/apriltags.dir/src/TagDetection.cc.o: ../src/TagDetection.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_11)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_12)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/apriltags.dir/src/TagDetection.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/apriltags.dir/src/TagDetection.cc.o -c /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/TagDetection.cc
 
@@ -304,7 +327,7 @@ CMakeFiles/apriltags.dir/src/TagDetection.cc.o.provides.build: CMakeFiles/aprilt
 
 CMakeFiles/apriltags.dir/src/TagDetector.cc.o: CMakeFiles/apriltags.dir/flags.make
 CMakeFiles/apriltags.dir/src/TagDetector.cc.o: ../src/TagDetector.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_12)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_13)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/apriltags.dir/src/TagDetector.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/apriltags.dir/src/TagDetector.cc.o -c /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/TagDetector.cc
 
@@ -327,7 +350,7 @@ CMakeFiles/apriltags.dir/src/TagDetector.cc.o.provides.build: CMakeFiles/aprilta
 
 CMakeFiles/apriltags.dir/src/TagFamily.cc.o: CMakeFiles/apriltags.dir/flags.make
 CMakeFiles/apriltags.dir/src/TagFamily.cc.o: ../src/TagFamily.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_13)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_14)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/apriltags.dir/src/TagFamily.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/apriltags.dir/src/TagFamily.cc.o -c /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/TagFamily.cc
 
@@ -350,7 +373,7 @@ CMakeFiles/apriltags.dir/src/TagFamily.cc.o.provides.build: CMakeFiles/apriltags
 
 CMakeFiles/apriltags.dir/src/UnionFindSimple.cc.o: CMakeFiles/apriltags.dir/flags.make
 CMakeFiles/apriltags.dir/src/UnionFindSimple.cc.o: ../src/UnionFindSimple.cc
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_14)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_15)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/apriltags.dir/src/UnionFindSimple.cc.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/apriltags.dir/src/UnionFindSimple.cc.o -c /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/UnionFindSimple.cc
 
@@ -382,6 +405,7 @@ apriltags_OBJECTS = \
 "CMakeFiles/apriltags.dir/src/Homography33.cc.o" \
 "CMakeFiles/apriltags.dir/src/MathUtil.cc.o" \
 "CMakeFiles/apriltags.dir/src/Quad.cc.o" \
+"CMakeFiles/apriltags.dir/src/RunningStats.cc.o" \
 "CMakeFiles/apriltags.dir/src/Segment.cc.o" \
 "CMakeFiles/apriltags.dir/src/TagDetection.cc.o" \
 "CMakeFiles/apriltags.dir/src/TagDetector.cc.o" \
@@ -400,6 +424,7 @@ lib/libapriltags.a: CMakeFiles/apriltags.dir/src/GrayModel.cc.o
 lib/libapriltags.a: CMakeFiles/apriltags.dir/src/Homography33.cc.o
 lib/libapriltags.a: CMakeFiles/apriltags.dir/src/MathUtil.cc.o
 lib/libapriltags.a: CMakeFiles/apriltags.dir/src/Quad.cc.o
+lib/libapriltags.a: CMakeFiles/apriltags.dir/src/RunningStats.cc.o
 lib/libapriltags.a: CMakeFiles/apriltags.dir/src/Segment.cc.o
 lib/libapriltags.a: CMakeFiles/apriltags.dir/src/TagDetection.cc.o
 lib/libapriltags.a: CMakeFiles/apriltags.dir/src/TagDetector.cc.o
@@ -424,6 +449,7 @@ CMakeFiles/apriltags.dir/requires: CMakeFiles/apriltags.dir/src/GrayModel.cc.o.r
 CMakeFiles/apriltags.dir/requires: CMakeFiles/apriltags.dir/src/Homography33.cc.o.requires
 CMakeFiles/apriltags.dir/requires: CMakeFiles/apriltags.dir/src/MathUtil.cc.o.requires
 CMakeFiles/apriltags.dir/requires: CMakeFiles/apriltags.dir/src/Quad.cc.o.requires
+CMakeFiles/apriltags.dir/requires: CMakeFiles/apriltags.dir/src/RunningStats.cc.o.requires
 CMakeFiles/apriltags.dir/requires: CMakeFiles/apriltags.dir/src/Segment.cc.o.requires
 CMakeFiles/apriltags.dir/requires: CMakeFiles/apriltags.dir/src/TagDetection.cc.o.requires
 CMakeFiles/apriltags.dir/requires: CMakeFiles/apriltags.dir/src/TagDetector.cc.o.requires

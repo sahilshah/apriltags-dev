@@ -10,6 +10,7 @@
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/build/include/AprilTags/MathUtil.h
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/build/include/AprilTags/pch.h
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/build/include/AprilTags/Quad.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/build/include/AprilTags/RunningStats.h
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/build/include/AprilTags/Segment.h
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/build/include/AprilTags/Tag16h5.h
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/build/include/AprilTags/Tag16h5_other.h

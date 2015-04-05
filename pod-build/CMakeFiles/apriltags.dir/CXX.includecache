@@ -64,6 +64,8 @@ ostream
 utility
 -
 
+../AprilTags/RunningStats.h
+
 ../AprilTags/Segment.h
 cmath
 -
@@ -171,6 +173,14 @@ AprilTags/Quad.h
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Quad.h
 AprilTags/Segment.h
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Segment.h
+
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/RunningStats.cc
+RunningStats.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/RunningStats.h
+cmath
+-
+vector
+-
 
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Segment.cc
 Segment.h

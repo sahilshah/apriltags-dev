@@ -677,6 +677,9 @@ CMakeFiles/apriltags.dir/src/Quad.cc.o
  include/AprilTags/Quad.h
  include/AprilTags/Segment.h
  include/AprilTags/XYWeight.h
+CMakeFiles/apriltags.dir/src/RunningStats.cc.o
+ ../AprilTags/RunningStats.h
+ /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/RunningStats.cc
 CMakeFiles/apriltags.dir/src/Segment.cc.o
  ../AprilTags/Segment.h
  /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Segment.cc

@@ -64,6 +64,8 @@ const string usage = "\n"
 #include "AprilTags/Tag25h9.h"
 #include "AprilTags/Tag36h9.h"
 #include "AprilTags/Tag36h11.h"
+#include "AprilTags/RunningStats.h"
+
 
 // Needed for getopt / command line options processing
 #include <unistd.h>
@@ -143,6 +145,8 @@ class Demo {
   int m_exposure;
   int m_gain;
   int m_brightness;
+
+  RunningStats m_runningStatsX;
 
 public:
 
@@ -426,9 +430,13 @@ public:
               r.at<double>(2,0), r.at<double>(2,1), r.at<double>(2,2);
       double yaw, pitch, roll;
       wRo_to_euler(wRo, yaw, pitch, roll);
-      printf("%4d %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f\n", detections.size(),
+
+      //add X observation to running stats
+      m_runningStatsX.Push(new_tvec.at<double>(0));
+
+      printf("%4d %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f\n", detections.size(),
         new_tvec.at<double>(0), new_tvec.at<double>(1), new_tvec.at<double>(2),
-          yaw,pitch,roll);
+          yaw,pitch,roll,m_runningStatsX.Mean(),m_runningStatsX.StandardDeviation());
     }
 
     // show the current image including any detections

@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/apriltags.dir/src/Homography33.cc.o"
   "CMakeFiles/apriltags.dir/src/MathUtil.cc.o"
   "CMakeFiles/apriltags.dir/src/Quad.cc.o"
+  "CMakeFiles/apriltags.dir/src/RunningStats.cc.o"
   "CMakeFiles/apriltags.dir/src/Segment.cc.o"
   "CMakeFiles/apriltags.dir/src/TagDetection.cc.o"
   "CMakeFiles/apriltags.dir/src/TagDetector.cc.o"
