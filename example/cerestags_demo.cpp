@@ -28,6 +28,7 @@ const string usage = "\n"
   "Options:\n"
   "  -h  -?          Show help options\n"
   "  -a              Arduino (send tag ids over serial port)\n"
+  "  -A              Use annular tags as well\n"
   "  -d              Disable graphics\n"
   "  -t              Timing of tag extraction\n"
   "  -C <bbxhh>      Tag family (default 36h11)\n"
@@ -135,6 +136,7 @@ class Demo {
   bool m_arduino; // send tag detections to serial port?
   bool m_timing; // print timing information for each tag extraction call
 
+  bool m_use_ann; // use annular tags
   int m_width; // image size in pixels
   int m_height;
   double m_tagSize; // April tag side length in meters of square black frame
@@ -163,7 +165,7 @@ public:
     m_tagDetector(NULL),
     m_tagCodes(AprilTags::tagCodes36h11),
     m_ann_tagCodes(AprilTags::tagCodes64),
-
+    m_use_ann(false),
     m_draw(true),
     m_arduino(false),
     m_timing(false),
@@ -204,7 +206,7 @@ public:
   // parse command line options to change default behavior
   void parseOptions(int argc, char* argv[]) {
     int c;
-    while ((c = getopt(argc, argv, ":h?adtC:F:H:S:W:E:G:B:D:")) != -1) {
+    while ((c = getopt(argc, argv, ":h?aAdtC:F:H:S:W:E:G:B:D:")) != -1) {
       // Each option character has to be in the string in getopt();
       // the first colon changes the error character from '?' to ':';
       // a colon after an option means that there is an extra
@@ -215,6 +217,9 @@ public:
         cout << intro;
         cout << usage;
         exit(0);
+        break;
+      case 'A':
+        m_use_ann = true;
         break;
       case 'a':
         m_arduino = true;
@@ -283,7 +288,10 @@ public:
   }
 
   void setup() {
-    m_tagDetector = new AprilTags::TagDetector(m_tagCodes,m_ann_tagCodes);
+    if(m_use_ann)
+      m_tagDetector = new AprilTags::TagDetector(m_tagCodes,m_ann_tagCodes);
+    else
+      m_tagDetector = new AprilTags::TagDetector(m_tagCodes);
 
     // prepare window for drawing the camera images
     if (m_draw) {

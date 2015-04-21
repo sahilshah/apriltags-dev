@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/Serial.cpp" "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o"
-  "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/cerestags_demo.cpp" "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o"
+  "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/Serial.cpp" "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o"
+  "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/cerestags_demo.cpp" "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/CMakeFiles/apriltags.dir/DependInfo.cmake"
+  "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles/apriltags.dir/DependInfo.cmake"
   )
 
 # The include file search paths:

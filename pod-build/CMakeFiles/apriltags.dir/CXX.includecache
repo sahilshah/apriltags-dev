@@ -100,41 +100,41 @@ vector
 
 ../AprilTags/XYWeight.h
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/Edge.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Edge.cc
 AprilTags/Edge.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Edge.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Edge.h
 AprilTags/FloatImage.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/FloatImage.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/FloatImage.h
 AprilTags/MathUtil.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/MathUtil.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/MathUtil.h
 AprilTags/UnionFindSimple.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/UnionFindSimple.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/UnionFindSimple.h
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/FloatImage.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/FloatImage.cc
 FloatImage.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/FloatImage.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/FloatImage.h
 Gaussian.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/Gaussian.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Gaussian.h
 iostream
 -
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/GLine2D.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/GLine2D.cc
 GLine2D.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/GLine2D.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/GLine2D.h
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/GLineSegment2D.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/GLineSegment2D.cc
 GLineSegment2D.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/GLineSegment2D.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/GLineSegment2D.h
 limits
 -
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/Gaussian.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Gaussian.cc
 Gaussian.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/Gaussian.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Gaussian.h
 iostream
 -
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/GrayModel.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/GrayModel.cc
 iostream
 -
 Eigen/Dense
@@ -142,9 +142,9 @@ Eigen/Dense
 Eigen/LU
 -
 AprilTags/GrayModel.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/GrayModel.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/GrayModel.h
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/Homography33.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Homography33.cc
 iostream
 -
 Eigen/Dense
@@ -152,41 +152,41 @@ Eigen/Dense
 opencv2/opencv.hpp
 -
 Homography33.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/Homography33.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Homography33.h
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/MathUtil.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/MathUtil.cc
 MathUtil.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/MathUtil.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/MathUtil.h
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/Quad.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Quad.cc
 Eigen/Dense
 -
 AprilTags/FloatImage.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/FloatImage.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/FloatImage.h
 AprilTags/MathUtil.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/MathUtil.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/MathUtil.h
 AprilTags/GLine2D.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/GLine2D.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/GLine2D.h
 AprilTags/Quad.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Quad.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Quad.h
 AprilTags/Segment.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Segment.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Segment.h
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/Segment.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Segment.cc
 Segment.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/Segment.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Segment.h
 iostream
 -
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/TagDetection.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/TagDetection.cc
 opencv2/opencv.hpp
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/opencv2/opencv.hpp
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/opencv2/opencv.hpp
 TagDetection.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/TagDetection.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/TagDetection.h
 MathUtil.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/MathUtil.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/MathUtil.h
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/TagDetector.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/TagDetector.cc
 algorithm
 -
 cmath
@@ -202,67 +202,67 @@ iostream
 Eigen/Dense
 -
 AprilTags/Edge.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Edge.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Edge.h
 AprilTags/FloatImage.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/FloatImage.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/FloatImage.h
 AprilTags/Gaussian.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Gaussian.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Gaussian.h
 AprilTags/GrayModel.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/GrayModel.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/GrayModel.h
 AprilTags/GLine2D.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/GLine2D.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/GLine2D.h
 AprilTags/GLineSegment2D.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/GLineSegment2D.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/GLineSegment2D.h
 AprilTags/Gridder.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Gridder.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Gridder.h
 AprilTags/Homography33.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Homography33.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Homography33.h
 AprilTags/MathUtil.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/MathUtil.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/MathUtil.h
 AprilTags/Quad.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Quad.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Quad.h
 AprilTags/Segment.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Segment.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Segment.h
 AprilTags/TagFamily.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/TagFamily.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/TagFamily.h
 AprilTags/UnionFindSimple.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/UnionFindSimple.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/UnionFindSimple.h
 AprilTags/XYWeight.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/XYWeight.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/XYWeight.h
 AprilTags/TagDetector.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/TagDetector.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/TagDetector.h
 opencv/cv.h
 -
 opencv/highgui.h
 -
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/TagFamily.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/TagFamily.cc
 iostream
 -
 TagFamily.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/TagFamily.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/TagFamily.h
 AprilTags/TagFamily.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/TagFamily.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/TagFamily.h
 AprilTags/Tag36h11.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Tag36h11.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Tag36h11.h
 AprilTags/Tag16h5.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Tag16h5.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Tag16h5.h
 AprilTags/Tag16h5_other.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Tag16h5_other.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Tag16h5_other.h
 AprilTags/Tag25h7.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Tag25h7.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Tag25h7.h
 AprilTags/Tag25h9.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Tag25h9.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Tag25h9.h
 AprilTags/Tag36h11.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Tag36h11.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Tag36h11.h
 AprilTags/Tag36h11_other.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Tag36h11_other.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Tag36h11_other.h
 AprilTags/Tag36h9.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/AprilTags/Tag36h9.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Tag36h9.h
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/UnionFindSimple.cc
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/UnionFindSimple.cc
 UnionFindSimple.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/src/UnionFindSimple.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/UnionFindSimple.h
 iostream
 -
 
@@ -5136,6 +5136,8 @@ include/AprilTags/Tag36h11_other.h
 
 include/AprilTags/Tag36h9.h
 
+include/AprilTags/Tag64.h
+
 include/AprilTags/TagDetection.h
 Eigen/Dense
 -
@@ -5157,6 +5159,8 @@ AprilTags/TagFamily.h
 include/AprilTags/AprilTags/TagFamily.h
 AprilTags/FloatImage.h
 include/AprilTags/AprilTags/FloatImage.h
+AprilTags/Tag64.h
+include/AprilTags/AprilTags/Tag64.h
 
 include/AprilTags/TagFamily.h
 climits

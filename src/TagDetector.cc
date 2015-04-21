@@ -529,106 +529,109 @@ namespace AprilTags {
       }
     }
 
-    // Decode for annTagFamily
-    // GrayModel blackModel, whiteModel;
-    dd = 2 * annTagFamily.blackBorder + annTagFamily.dimension;
+    // Decode for annTagFamily  
+    if(isUsingAnn){
+      
+      // GrayModel blackModel, whiteModel;
+      dd = 2 * annTagFamily.blackBorder + annTagFamily.dimension;
 
-    for (int iy = -1; iy <= dd; iy++) {
-      float y = (iy + 0.5f) / dd;
-      for (int ix = -1; ix <= dd; ix++) {
-        float x = (ix + 0.5f) / dd;
-        std::pair<float,float> pxy = quad.interpolate01(x, y);
-        int irx = (int) (pxy.first + 0.5);
-        int iry = (int) (pxy.second + 0.5);
-        if (irx < 0 || irx >= width || iry < 0 || iry >= height)
-          continue;
-        float v = fim.get(irx, iry);
-        if (iy == -1 || iy == dd || ix == -1 || ix == dd)
-          whiteModel.addObservation(x, y, v);
-        else if (iy == 0 || iy == (dd-1) || ix == 0 || ix == (dd-1))
-          blackModel.addObservation(x, y, v);
+      for (int iy = -1; iy <= dd; iy++) {
+        float y = (iy + 0.5f) / dd;
+        for (int ix = -1; ix <= dd; ix++) {
+          float x = (ix + 0.5f) / dd;
+          std::pair<float,float> pxy = quad.interpolate01(x, y);
+          int irx = (int) (pxy.first + 0.5);
+          int iry = (int) (pxy.second + 0.5);
+          if (irx < 0 || irx >= width || iry < 0 || iry >= height)
+            continue;
+          float v = fim.get(irx, iry);
+          if (iy == -1 || iy == dd || ix == -1 || ix == dd)
+            whiteModel.addObservation(x, y, v);
+          else if (iy == 0 || iy == (dd-1) || ix == 0 || ix == (dd-1))
+            blackModel.addObservation(x, y, v);
+        }
       }
-    }
 
-    bad = false;
-    tagCode = 0LL;
-    for ( int iy = annTagFamily.dimension-1; iy >= 0; iy-- ) {
-      float y = (annTagFamily.blackBorder + iy + 0.5f) / dd;
-      for (int ix = 0; ix < annTagFamily.dimension; ix++ ) {
- 
-        if( ix > 0 && ix < annTagFamily.dimension-1 && 
-          iy > 0 && iy < annTagFamily.dimension-1){
+      bad = false;
+      tagCode = 0LL;
+      for ( int iy = annTagFamily.dimension-1; iy >= 0; iy-- ) {
+        float y = (annTagFamily.blackBorder + iy + 0.5f) / dd;
+        for (int ix = 0; ix < annTagFamily.dimension; ix++ ) {
+   
+          if( ix > 0 && ix < annTagFamily.dimension-1 && 
+            iy > 0 && iy < annTagFamily.dimension-1){
+            tagCode = tagCode << 1;
+            continue;
+          }
+   
+          float x = (annTagFamily.blackBorder + ix + 0.5f) / dd;
+          std::pair<float,float> pxy = quad.interpolate01(x, y);
+          int irx = (int) (pxy.first + 0.5);
+          int iry = (int) (pxy.second + 0.5);
+          if (irx < 0 || irx >= width || iry < 0 || iry >= height) {
+            // cout << "*** bad:  irx=" << irx << "  iry=" << iry << endl;
+            bad = true;
+            continue;
+          }
+          float threshold = (blackModel.interpolate(x,y) + whiteModel.interpolate(x,y)) * 0.5f;
+          float v = fim.get(irx, iry);
           tagCode = tagCode << 1;
-          continue;
-        }
- 
-        float x = (annTagFamily.blackBorder + ix + 0.5f) / dd;
-        std::pair<float,float> pxy = quad.interpolate01(x, y);
-        int irx = (int) (pxy.first + 0.5);
-        int iry = (int) (pxy.second + 0.5);
-        if (irx < 0 || irx >= width || iry < 0 || iry >= height) {
-          // cout << "*** bad:  irx=" << irx << "  iry=" << iry << endl;
-          bad = true;
-          continue;
-        }
-        float threshold = (blackModel.interpolate(x,y) + whiteModel.interpolate(x,y)) * 0.5f;
-        float v = fim.get(irx, iry);
-        tagCode = tagCode << 1;
-        if ( v > threshold)
-          tagCode |= 1;
-#ifdef DEBUG_APRIL
-        {
-          if (v>threshold)
-            cv::circle(dbg_image, cv::Point2f(irx, iry), 1, cv::Scalar(0,0,255,0), 2);
-          else
-            cv::circle(dbg_image, cv::Point2f(irx, iry), 1, cv::Scalar(0,255,0,0), 2);
-        }
-#endif
-      }
-    }
-
-    if ( !bad ) {
-      TagDetection annTagDetection;
-      annTagFamily.decode(annTagDetection, tagCode);
-
-      // compute the homography (and rotate it appropriately)
-      annTagDetection.homography = quad.homography.getH();
-      annTagDetection.hxy = quad.homography.getCXY();
-
-      float c = std::cos(annTagDetection.rotation*(float)M_PI/2);
-      float s = std::sin(annTagDetection.rotation*(float)M_PI/2);
-      Eigen::Matrix3d R;
-      R.setZero();
-      R(0,0) = R(1,1) = c;
-      R(0,1) = -s;
-      R(1,0) = s;
-      R(2,2) = 1;
-      Eigen::Matrix3d tmp;
-      tmp = annTagDetection.homography * R;
-      annTagDetection.homography = tmp;
-
-      // Rotate points in detection according to decoded
-      // orientation.  Thus the order of the points in the
-      // detection object can be used to determine the
-      // orientation of the target.
-      std::pair<float,float> bottomLeft = annTagDetection.interpolate(-1,-1);
-      int bestRot = -1;
-      float bestDist = FLT_MAX;
-      for ( int i=0; i<4; i++ ) {
-        float const dist = AprilTags::MathUtil::distance2D(bottomLeft, quad.quadPoints[i]);
-        if ( dist < bestDist ) {
-          bestDist = dist;
-          bestRot = i;
+          if ( v > threshold)
+            tagCode |= 1;
+  #ifdef DEBUG_APRIL
+          {
+            if (v>threshold)
+              cv::circle(dbg_image, cv::Point2f(irx, iry), 1, cv::Scalar(0,0,255,0), 2);
+            else
+              cv::circle(dbg_image, cv::Point2f(irx, iry), 1, cv::Scalar(0,255,0,0), 2);
+          }
+  #endif
         }
       }
 
-      for (int i=0; i< 4; i++)
-         annTagDetection.p[i] = quad.quadPoints[(i+bestRot) % 4];
+      if ( !bad ) {
+        TagDetection annTagDetection;
+        annTagFamily.decode(annTagDetection, tagCode);
 
-      if (annTagDetection.good) {
-        annTagDetection.cxy = quad.interpolate01(0.5f, 0.5f);
-        annTagDetection.observedPerimeter = quad.observedPerimeter;
-        detections.push_back(annTagDetection);
+        // compute the homography (and rotate it appropriately)
+        annTagDetection.homography = quad.homography.getH();
+        annTagDetection.hxy = quad.homography.getCXY();
+
+        float c = std::cos(annTagDetection.rotation*(float)M_PI/2);
+        float s = std::sin(annTagDetection.rotation*(float)M_PI/2);
+        Eigen::Matrix3d R;
+        R.setZero();
+        R(0,0) = R(1,1) = c;
+        R(0,1) = -s;
+        R(1,0) = s;
+        R(2,2) = 1;
+        Eigen::Matrix3d tmp;
+        tmp = annTagDetection.homography * R;
+        annTagDetection.homography = tmp;
+
+        // Rotate points in detection according to decoded
+        // orientation.  Thus the order of the points in the
+        // detection object can be used to determine the
+        // orientation of the target.
+        std::pair<float,float> bottomLeft = annTagDetection.interpolate(-1,-1);
+        int bestRot = -1;
+        float bestDist = FLT_MAX;
+        for ( int i=0; i<4; i++ ) {
+          float const dist = AprilTags::MathUtil::distance2D(bottomLeft, quad.quadPoints[i]);
+          if ( dist < bestDist ) {
+            bestDist = dist;
+            bestRot = i;
+          }
+        }
+
+        for (int i=0; i< 4; i++)
+           annTagDetection.p[i] = quad.quadPoints[(i+bestRot) % 4];
+
+        if (annTagDetection.good) {
+          annTagDetection.cxy = quad.interpolate01(0.5f, 0.5f);
+          annTagDetection.observedPerimeter = quad.observedPerimeter;
+          detections.push_back(annTagDetection);
+        }
       }
     }
 

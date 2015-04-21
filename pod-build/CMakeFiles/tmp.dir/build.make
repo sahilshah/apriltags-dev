@@ -35,10 +35,10 @@ RM = /usr/local/Cellar/cmake/3.1.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev
+CMAKE_SOURCE_DIR = /Users/sahilshah/Desktop/developer/ceres/apriltags-dev
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build
+CMAKE_BINARY_DIR = /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build
 
 # Utility rule file for tmp.
 
@@ -57,6 +57,6 @@ CMakeFiles/tmp.dir/clean:
 .PHONY : CMakeFiles/tmp.dir/clean
 
 CMakeFiles/tmp.dir/depend:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/CMakeFiles/tmp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sahilshah/Desktop/developer/ceres/apriltags-dev /Users/sahilshah/Desktop/developer/ceres/apriltags-dev /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles/tmp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/tmp.dir/depend
 

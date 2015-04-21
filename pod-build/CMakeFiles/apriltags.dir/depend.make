@@ -1514,6 +1514,7 @@ CMakeFiles/apriltags.dir/src/TagDetector.cc.o: include/AprilTags/Homography33.h
 CMakeFiles/apriltags.dir/src/TagDetector.cc.o: include/AprilTags/MathUtil.h
 CMakeFiles/apriltags.dir/src/TagDetector.cc.o: include/AprilTags/Quad.h
 CMakeFiles/apriltags.dir/src/TagDetector.cc.o: include/AprilTags/Segment.h
+CMakeFiles/apriltags.dir/src/TagDetector.cc.o: include/AprilTags/Tag64.h
 CMakeFiles/apriltags.dir/src/TagDetector.cc.o: include/AprilTags/TagDetection.h
 CMakeFiles/apriltags.dir/src/TagDetector.cc.o: include/AprilTags/TagDetector.h
 CMakeFiles/apriltags.dir/src/TagDetector.cc.o: include/AprilTags/TagFamily.h

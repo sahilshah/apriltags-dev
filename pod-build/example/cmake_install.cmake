@@ -1,8 +1,8 @@
-# Install script for directory: /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example
+# Install script for directory: /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build")
+  set(CMAKE_INSTALL_PREFIX "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/build")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -28,17 +28,17 @@ if(NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/bin/cerestags_demo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/bin/cerestags_demo")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cerestags_demo" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cerestags_demo")
     execute_process(COMMAND /usr/bin/install_name_tool
-      -delete_rpath "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/lib"
+      -delete_rpath "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/lib"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cerestags_demo")
     execute_process(COMMAND /usr/bin/install_name_tool
-      -delete_rpath "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/lib"
+      -delete_rpath "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/build/lib"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cerestags_demo")
     execute_process(COMMAND /usr/bin/install_name_tool
-      -add_rpath "/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build/lib"
+      -add_rpath "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/build/lib"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cerestags_demo")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/cerestags_demo")

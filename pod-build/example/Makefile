@@ -43,10 +43,10 @@ RM = /usr/local/Cellar/cmake/3.1.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev
+CMAKE_SOURCE_DIR = /Users/sahilshah/Desktop/developer/ceres/apriltags-dev
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build
+CMAKE_BINARY_DIR = /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -114,14 +114,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/CMakeFiles /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/example/CMakeFiles/progress.marks
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f CMakeFiles/Makefile2 example/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/CMakeFiles 0
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(CMAKE_COMMAND) -E cmake_progress_start /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/example/CMakeFiles/progress.marks
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(MAKE) -f CMakeFiles/Makefile2 example/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f CMakeFiles/Makefile2 example/clean
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(MAKE) -f CMakeFiles/Makefile2 example/clean
 .PHONY : clean
 
 # The main clean target
@@ -130,22 +130,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(MAKE) -f CMakeFiles/Makefile2 example/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 example/CMakeFiles/cerestags_demo.dir/rule:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/cerestags_demo.dir/rule
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(MAKE) -f CMakeFiles/Makefile2 example/CMakeFiles/cerestags_demo.dir/rule
 .PHONY : example/CMakeFiles/cerestags_demo.dir/rule
 
 # Convenience name for target.
@@ -154,7 +154,7 @@ cerestags_demo: example/CMakeFiles/cerestags_demo.dir/rule
 
 # fast build rule for target.
 cerestags_demo/fast:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/build
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/build
 .PHONY : cerestags_demo/fast
 
 Serial.o: Serial.cpp.o
@@ -162,7 +162,7 @@ Serial.o: Serial.cpp.o
 
 # target to build an object file
 Serial.cpp.o:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o
 .PHONY : Serial.cpp.o
 
 Serial.i: Serial.cpp.i
@@ -170,7 +170,7 @@ Serial.i: Serial.cpp.i
 
 # target to preprocess a source file
 Serial.cpp.i:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/Serial.cpp.i
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/Serial.cpp.i
 .PHONY : Serial.cpp.i
 
 Serial.s: Serial.cpp.s
@@ -178,7 +178,7 @@ Serial.s: Serial.cpp.s
 
 # target to generate assembly for a file
 Serial.cpp.s:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/Serial.cpp.s
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/Serial.cpp.s
 .PHONY : Serial.cpp.s
 
 cerestags_demo.o: cerestags_demo.cpp.o
@@ -186,7 +186,7 @@ cerestags_demo.o: cerestags_demo.cpp.o
 
 # target to build an object file
 cerestags_demo.cpp.o:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o
 .PHONY : cerestags_demo.cpp.o
 
 cerestags_demo.i: cerestags_demo.cpp.i
@@ -194,7 +194,7 @@ cerestags_demo.i: cerestags_demo.cpp.i
 
 # target to preprocess a source file
 cerestags_demo.cpp.i:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.i
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.i
 .PHONY : cerestags_demo.cpp.i
 
 cerestags_demo.s: cerestags_demo.cpp.s
@@ -202,7 +202,7 @@ cerestags_demo.s: cerestags_demo.cpp.s
 
 # target to generate assembly for a file
 cerestags_demo.cpp.s:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.s
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(MAKE) -f example/CMakeFiles/cerestags_demo.dir/build.make example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.s
 .PHONY : cerestags_demo.cpp.s
 
 # Help Target
@@ -235,6 +235,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,4 +1,4 @@
-prefix=/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/build
+prefix=/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/build
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib
 includedir=${prefix}/include

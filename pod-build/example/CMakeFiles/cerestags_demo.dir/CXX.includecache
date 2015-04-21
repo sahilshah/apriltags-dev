@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/Serial.cpp
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/Serial.cpp
 fcntl.h
 -
 termios.h
@@ -20,13 +20,13 @@ sstream
 unistd.h
 -
 Serial.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/Serial.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/Serial.h
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/Serial.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/Serial.h
 string
 -
 
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/cerestags_demo.cpp
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/cerestags_demo.cpp
 iostream
 -
 cstring
@@ -48,25 +48,25 @@ fcntl.h
 errno.h
 -
 opencv2/opencv.hpp
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/opencv2/opencv.hpp
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/opencv2/opencv.hpp
 AprilTags/TagDetector.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/AprilTags/TagDetector.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/AprilTags/TagDetector.h
 AprilTags/Tag16h5.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/AprilTags/Tag16h5.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/AprilTags/Tag16h5.h
 AprilTags/Tag25h7.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/AprilTags/Tag25h7.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/AprilTags/Tag25h7.h
 AprilTags/Tag25h9.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/AprilTags/Tag25h9.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/AprilTags/Tag25h9.h
 AprilTags/Tag36h9.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/AprilTags/Tag36h9.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/AprilTags/Tag36h9.h
 AprilTags/Tag36h11.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/AprilTags/Tag36h11.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/AprilTags/Tag36h11.h
 AprilTags/Tag64.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/AprilTags/Tag64.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/AprilTags/Tag64.h
 unistd.h
 -
 Serial.h
-/Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/Serial.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/Serial.h
 cmath
 -
 
@@ -1375,6 +1375,8 @@ AprilTags/TagFamily.h
 include/AprilTags/AprilTags/TagFamily.h
 AprilTags/FloatImage.h
 include/AprilTags/AprilTags/FloatImage.h
+AprilTags/Tag64.h
+include/AprilTags/AprilTags/Tag64.h
 
 include/AprilTags/TagFamily.h
 climits

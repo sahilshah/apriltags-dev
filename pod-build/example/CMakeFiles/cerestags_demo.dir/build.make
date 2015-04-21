@@ -35,10 +35,10 @@ RM = /usr/local/Cellar/cmake/3.1.2/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev
+CMAKE_SOURCE_DIR = /Users/sahilshah/Desktop/developer/ceres/apriltags-dev
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build
+CMAKE_BINARY_DIR = /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build
 
 # Include any dependencies generated for this target.
 include example/CMakeFiles/cerestags_demo.dir/depend.make
@@ -51,17 +51,17 @@ include example/CMakeFiles/cerestags_demo.dir/flags.make
 
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: example/CMakeFiles/cerestags_demo.dir/flags.make
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: ../example/cerestags_demo.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o"
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/example && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o -c /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/cerestags_demo.cpp
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/example && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o -c /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/cerestags_demo.cpp
 
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.i"
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/cerestags_demo.cpp > CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.i
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/cerestags_demo.cpp > CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.i
 
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.s"
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/cerestags_demo.cpp -o CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.s
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/cerestags_demo.cpp -o CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.s
 
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o.requires:
 .PHONY : example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o.requires
@@ -74,17 +74,17 @@ example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o.provides.build: examp
 
 example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o: example/CMakeFiles/cerestags_demo.dir/flags.make
 example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o: ../example/Serial.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o"
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/example && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cerestags_demo.dir/Serial.cpp.o -c /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/Serial.cpp
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/example && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/cerestags_demo.dir/Serial.cpp.o -c /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/Serial.cpp
 
 example/CMakeFiles/cerestags_demo.dir/Serial.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cerestags_demo.dir/Serial.cpp.i"
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/Serial.cpp > CMakeFiles/cerestags_demo.dir/Serial.cpp.i
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/Serial.cpp > CMakeFiles/cerestags_demo.dir/Serial.cpp.i
 
 example/CMakeFiles/cerestags_demo.dir/Serial.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cerestags_demo.dir/Serial.cpp.s"
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example/Serial.cpp -o CMakeFiles/cerestags_demo.dir/Serial.cpp.s
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/example && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/Serial.cpp -o CMakeFiles/cerestags_demo.dir/Serial.cpp.s
 
 example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o.requires:
 .PHONY : example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o.requires
@@ -128,7 +128,7 @@ bin/cerestags_demo: /usr/local/lib/libopencv_flann.2.4.10.dylib
 bin/cerestags_demo: /usr/local/lib/libopencv_core.2.4.10.dylib
 bin/cerestags_demo: example/CMakeFiles/cerestags_demo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable ../bin/cerestags_demo"
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cerestags_demo.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/example && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cerestags_demo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 example/CMakeFiles/cerestags_demo.dir/build: bin/cerestags_demo
@@ -139,10 +139,10 @@ example/CMakeFiles/cerestags_demo.dir/requires: example/CMakeFiles/cerestags_dem
 .PHONY : example/CMakeFiles/cerestags_demo.dir/requires
 
 example/CMakeFiles/cerestags_demo.dir/clean:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/example && $(CMAKE_COMMAND) -P CMakeFiles/cerestags_demo.dir/cmake_clean.cmake
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/example && $(CMAKE_COMMAND) -P CMakeFiles/cerestags_demo.dir/cmake_clean.cmake
 .PHONY : example/CMakeFiles/cerestags_demo.dir/clean
 
 example/CMakeFiles/cerestags_demo.dir/depend:
-	cd /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/example /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/example /Users/sahilshah/Desktop/project/software/downloads/apriltags-dev/pod-build/example/CMakeFiles/cerestags_demo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/sahilshah/Desktop/developer/ceres/apriltags-dev /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/example /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/example/CMakeFiles/cerestags_demo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : example/CMakeFiles/cerestags_demo.dir/depend
 
