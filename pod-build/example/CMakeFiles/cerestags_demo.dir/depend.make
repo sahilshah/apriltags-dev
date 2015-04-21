@@ -4,6 +4,7 @@
 example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o: ../example/Serial.cpp
 example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o: ../example/Serial.h
 
+example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: .././AprilTags/RunningStats.h
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: ../example/Serial.h
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: ../example/cerestags_demo.cpp
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: /usr/local/Cellar/eigen/3.2.4/include/eigen3/Eigen/Cholesky

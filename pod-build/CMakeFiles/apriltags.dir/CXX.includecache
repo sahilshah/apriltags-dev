@@ -172,6 +172,14 @@ AprilTags/Quad.h
 AprilTags/Segment.h
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/AprilTags/Segment.h
 
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/RunningStats.cc
+RunningStats.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/RunningStats.h
+cmath
+-
+vector
+-
+
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Segment.cc
 Segment.h
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Segment.h

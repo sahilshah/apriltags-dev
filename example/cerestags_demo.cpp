@@ -42,12 +42,6 @@ const string usage = "\n"
   "  -B <brightness> Manually set the camera brightness (default 128; range 0-255)\n"
   "\n";
 
-const string intro = "\n"
-    "April tags test code\n"
-    "(C) 2012-2014 Massachusetts Institute of Technology\n"
-    "Michael Kaess\n"
-    "\n";
-
 
 #ifndef __APPLE__
 #define EXPOSURE_CONTROL // only works in Linux
@@ -71,6 +65,7 @@ const string intro = "\n"
 #include "AprilTags/Tag25h9.h"
 #include "AprilTags/Tag36h9.h"
 #include "AprilTags/Tag36h11.h"
+#include "AprilTags/RunningStats.h"
 #include "AprilTags/Tag64.h"
 
 
@@ -133,7 +128,6 @@ class Demo {
   AprilTags::TagCodes m_tagCodes,m_ann_tagCodes;
 
   bool m_draw; // draw image and April tag detections?
-  bool m_arduino; // send tag detections to serial port?
   bool m_timing; // print timing information for each tag extraction call
 
   bool m_use_ann; // use annular tags
@@ -154,7 +148,8 @@ class Demo {
   int m_exposure;
   int m_gain;
   int m_brightness;
-
+  
+  RunningStats m_runningStatsX;
   Serial m_serial;
 
 public:
@@ -167,7 +162,6 @@ public:
     m_ann_tagCodes(AprilTags::tagCodes64),
     m_use_ann(false),
     m_draw(true),
-    m_arduino(false),
     m_timing(false),
 
     m_width(640),
@@ -206,7 +200,7 @@ public:
   // parse command line options to change default behavior
   void parseOptions(int argc, char* argv[]) {
     int c;
-    while ((c = getopt(argc, argv, ":h?aAdtC:F:H:S:W:E:G:B:D:")) != -1) {
+    while ((c = getopt(argc, argv, ":h?AdtC:F:H:S:W:E:G:B:D:")) != -1) {
       // Each option character has to be in the string in getopt();
       // the first colon changes the error character from '?' to ':';
       // a colon after an option means that there is an extra
@@ -214,15 +208,11 @@ public:
       switch (c) {
       case 'h':
       case '?':
-        cout << intro;
         cout << usage;
         exit(0);
         break;
       case 'A':
         m_use_ann = true;
-        break;
-      case 'a':
-        m_arduino = true;
         break;
       case 'd':
         m_draw = false;
@@ -273,7 +263,6 @@ public:
         m_deviceId = atoi(optarg);
         break;
       case ':': // unknown option, from getopt
-        cout << intro;
         cout << usage;
         exit(1);
         break;
@@ -298,10 +287,6 @@ public:
       cv::namedWindow(windowName, 1);
     }
 
-    // optional: prepare serial port for communication with Arduino
-    if (m_arduino) {
-      m_serial.open("/dev/ttyACM0");
-    }
   }
 
   void setupVideo() {
@@ -369,36 +354,18 @@ public:
     detection.getRelativeTranslationRotation(m_tagSize, m_fx, m_fy, m_px, m_py,
                                              translation, rotation);
 
-    Eigen::Matrix3d F;
-    F <<
-      1, 0,  0,
-      0,  -1,  0,
-      0,  0,  1;
-    Eigen::Matrix3d fixed_rot = F*rotation;
+    // Eigen::Matrix3d F;
+    // F <<
+    //   1, 0,  0,
+    //   0,  -1,  0,
+    //   0,  0,  1;
+    // Eigen::Matrix3d fixed_rot = F*rotation;
     double yaw, pitch, roll;
-    wRo_to_euler(fixed_rot, yaw, pitch, roll);
+    wRo_to_euler(rotation, yaw, pitch, roll);
 
-    cout << "  distance=" << translation.norm()
-         << "m, x=" << translation(0)
-         << ", y=" << translation(1)
-         << ", z=" << translation(2)
-         << ", yaw=" << yaw
-         << ", pitch=" << pitch
-         << ", roll=" << roll
-         << endl;
-    // cout << translation.norm()
-    //      << ", " << translation(0)
-    //      << ", " << translation(1)
-    //      << ", " << translation(2)
-    //      << ", " << yaw
-    //      << ", " << pitch
-    //      << ", " << roll
-    //      << endl;
+    printf("x = %.3f y = %.3f z = %.3f y = %.3f p = %.3f r = %.3f\n",
+      translation(0),translation(1),translation(2),yaw,pitch,roll);
 
-    // Also note that for SLAM/multi-view application it is better to
-    // use reprojection error of corner points, because the noise in
-    // this relative pose is very non-Gaussian; see iSAM source code
-    // for suitable factors.
   }
 
   void processImage(cv::Mat& image, cv::Mat& image_gray) {
@@ -417,20 +384,76 @@ public:
     vector<AprilTags::TagDetection> detections = m_tagDetector->extractTags(image_gray);
     if (m_timing) {
       double dt = tic()-t0;
-      // cout << "Extracting tags took " << dt << " seconds." << endl;
+      //cout << "Extracting tags took " << dt << " seconds." << endl;
     }
 
-    // print out each detection
-    // cout << detections.size() << " tags detected:" << endl;
-    // for (int i=0; i<detections.size(); i++) {
-    int x;
-    if(detections.size() > 0)
-      x = 1;
-    else 
-      x = 0;
-    for (int i=0; i<x; i++) {
-    // for (int i=0; i<; i++) {
-      print_detection(detections[i]);
+    if(detections.size()){
+      //stack all ps and Ps and solvePnP
+      std::vector<cv::Point3f> objPts;
+      std::vector<cv::Point2f> imgPts;
+      double s = 0.105/2.;
+      double centre_dist = 0.3;
+      int grid_c = 5;
+      double x_c,y_c;  // bottom left AT, x y
+      for (int i=0; i<detections.size(); i++) {
+        // NOTE: uncomment this in case you want to reject too close ATs
+        // if(detections[i].id % 2)
+        //   continue;
+        int num = detections[i].id-1;    //starts with 1 at top left
+        int row = num / grid_c;
+        int col = num % grid_c;
+        x_c = double(col) * centre_dist; 
+        y_c = - double(row) * centre_dist; 
+
+        objPts.push_back(cv::Point3f(x_c - s, y_c - s, 0));
+        objPts.push_back(cv::Point3f(x_c + s, y_c - s, 0));
+        objPts.push_back(cv::Point3f(x_c + s, y_c + s, 0));
+        objPts.push_back(cv::Point3f(x_c - s, y_c + s, 0));
+
+        std::pair<float, float> p1 = detections[i].p[0];
+        std::pair<float, float> p2 = detections[i].p[1];
+        std::pair<float, float> p3 = detections[i].p[2];
+        std::pair<float, float> p4 = detections[i].p[3];
+        imgPts.push_back(cv::Point2f(p1.first, p1.second));
+        imgPts.push_back(cv::Point2f(p2.first, p2.second));
+        imgPts.push_back(cv::Point2f(p3.first, p3.second));
+        imgPts.push_back(cv::Point2f(p4.first, p4.second)); 
+
+      }
+
+      if(!objPts.size())
+        return;
+
+      cv::Mat rvec, tvec;
+      cv::Matx33f cameraMatrix(
+                               m_fx, 0, m_px,
+                               0, m_fy, m_py,
+                               0,  0,  1);
+      cv::Vec4f distParam(0,0,0,0); // all 0?
+      cv::solvePnP(objPts, imgPts, cameraMatrix, distParam, rvec, tvec);
+      // NOTE: can chose between RANSAC and normal solvepPnP. Atm normal works better
+      // cv::solvePnPRansac(objPts, imgPts, cameraMatrix, distParam, rvec, tvec,
+      //   false,100,8.0,(0.95 * float(detections.size()) * 4.0));
+
+      cv::Mat r;
+      cv::Rodrigues(rvec, r);
+
+      r = r.t();  // rotation of inverse
+      cv::Mat new_tvec(-r * tvec); // translation of inverse
+
+      Eigen::Matrix3d wRo;
+      wRo <<  r.at<double>(0,0), r.at<double>(0,1), r.at<double>(0,2), 
+              r.at<double>(1,0), r.at<double>(1,1), r.at<double>(1,2),
+              r.at<double>(2,0), r.at<double>(2,1), r.at<double>(2,2);
+      double yaw, pitch, roll;
+      wRo_to_euler(wRo, yaw, pitch, roll);
+
+      //add X observation to running stats
+      m_runningStatsX.Push(new_tvec.at<double>(0));
+
+      printf("%4d %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f\n", detections.size(),
+        new_tvec.at<double>(0), new_tvec.at<double>(1), new_tvec.at<double>(2),
+          yaw,pitch,roll,m_runningStatsX.Mean(),m_runningStatsX.StandardDeviation());
     }
 
     // show the current image including any detections
@@ -440,28 +463,6 @@ public:
         detections[i].draw(image);
       }
       imshow(windowName, image); // OpenCV call
-    }
-
-    // optionally send tag information to serial port (e.g. to Arduino)
-    if (m_arduino) {
-      if (detections.size() > 0) {
-        // only the first detected tag is sent out for now
-        Eigen::Vector3d translation;
-        Eigen::Matrix3d rotation;
-        detections[0].getRelativeTranslationRotation(m_tagSize, m_fx, m_fy, m_px, m_py,
-                                                     translation, rotation);
-        m_serial.print(detections[0].id);
-        m_serial.print(",");
-        m_serial.print(translation(0));
-        m_serial.print(",");
-        m_serial.print(translation(1));
-        m_serial.print(",");
-        m_serial.print(translation(2));
-        m_serial.print("\n");
-      } else {
-        // no tag detected: tag ID = -1
-        m_serial.print("-1,0.0,0.0,0.0\n");
-      }
     }
   }
 
@@ -513,31 +514,19 @@ public:
 
 }; // Demo
 
-
-// here is were everything begins
 int main(int argc, char* argv[]) {
   Demo demo;
-
   // process command line options
   demo.parseOptions(argc, argv);
-
   demo.setup();
-
   if (demo.isVideo()) {
-    // cout << "Processing video" << endl;
-
     // setup image source, window for drawing, serial port...
     demo.setupVideo();
-
     // the actual processing loop where tags are detected and visualized
     demo.loop();
-
   } else {
-    // cout << "Processing image" << endl;
-
     // process single image
     demo.loadImages();
-
   }
 
   return 0;

@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Homography33.cc" "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles/apriltags.dir/src/Homography33.cc.o"
   "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/MathUtil.cc" "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles/apriltags.dir/src/MathUtil.cc.o"
   "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Quad.cc" "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles/apriltags.dir/src/Quad.cc.o"
+  "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/RunningStats.cc" "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles/apriltags.dir/src/RunningStats.cc.o"
   "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/Segment.cc" "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles/apriltags.dir/src/Segment.cc.o"
   "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/TagDetection.cc" "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles/apriltags.dir/src/TagDetection.cc.o"
   "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/src/TagDetector.cc" "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/pod-build/CMakeFiles/apriltags.dir/src/TagDetector.cc.o"

@@ -6,6 +6,8 @@
 
 #IncludeRegexTransform: 
 
+.././AprilTags/RunningStats.h
+
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/Serial.cpp
 fcntl.h
 -
@@ -61,6 +63,8 @@ AprilTags/Tag36h9.h
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/AprilTags/Tag36h9.h
 AprilTags/Tag36h11.h
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/AprilTags/Tag36h11.h
+AprilTags/RunningStats.h
+/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/AprilTags/RunningStats.h
 AprilTags/Tag64.h
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/AprilTags/Tag64.h
 unistd.h

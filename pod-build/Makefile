@@ -398,6 +398,30 @@ src/Quad.cc.s:
 	$(MAKE) -f CMakeFiles/apriltags.dir/build.make CMakeFiles/apriltags.dir/src/Quad.cc.s
 .PHONY : src/Quad.cc.s
 
+src/RunningStats.o: src/RunningStats.cc.o
+.PHONY : src/RunningStats.o
+
+# target to build an object file
+src/RunningStats.cc.o:
+	$(MAKE) -f CMakeFiles/apriltags.dir/build.make CMakeFiles/apriltags.dir/src/RunningStats.cc.o
+.PHONY : src/RunningStats.cc.o
+
+src/RunningStats.i: src/RunningStats.cc.i
+.PHONY : src/RunningStats.i
+
+# target to preprocess a source file
+src/RunningStats.cc.i:
+	$(MAKE) -f CMakeFiles/apriltags.dir/build.make CMakeFiles/apriltags.dir/src/RunningStats.cc.i
+.PHONY : src/RunningStats.cc.i
+
+src/RunningStats.s: src/RunningStats.cc.s
+.PHONY : src/RunningStats.s
+
+# target to generate assembly for a file
+src/RunningStats.cc.s:
+	$(MAKE) -f CMakeFiles/apriltags.dir/build.make CMakeFiles/apriltags.dir/src/RunningStats.cc.s
+.PHONY : src/RunningStats.cc.s
+
 src/Segment.o: src/Segment.cc.o
 .PHONY : src/Segment.o
 
@@ -560,6 +584,9 @@ help:
 	@echo "... src/Quad.o"
 	@echo "... src/Quad.i"
 	@echo "... src/Quad.s"
+	@echo "... src/RunningStats.o"
+	@echo "... src/RunningStats.i"
+	@echo "... src/RunningStats.s"
 	@echo "... src/Segment.o"
 	@echo "... src/Segment.i"
 	@echo "... src/Segment.s"
