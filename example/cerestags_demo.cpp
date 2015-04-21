@@ -395,10 +395,18 @@ public:
       double centre_dist = 0.3;
       int grid_c = 5;
       double x_c,y_c;  // bottom left AT, x y
+
+      AprilTags::TagDetection ann_det;
+
       for (int i=0; i<detections.size(); i++) {
-        // NOTE: uncomment this in case you want to reject too close ATs
-        // if(detections[i].id % 2)
-        //   continue;
+        
+        // This is for the Big Annular April Tag- reject for now
+        // TODO: incorp pose from this as well and then fuse
+        if(detections[i].id == 0){
+          ann_det = detections[i];
+          continue;
+        }
+
         int num = detections[i].id-1;    //starts with 1 at top left
         int row = num / grid_c;
         int col = num % grid_c;
@@ -454,6 +462,39 @@ public:
       printf("%4d %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f\n", detections.size(),
         new_tvec.at<double>(0), new_tvec.at<double>(1), new_tvec.at<double>(2),
           yaw,pitch,roll,m_runningStatsX.Mean(),m_runningStatsX.StandardDeviation());
+
+      // Estimation from big tag
+      objPts.clear();
+      objPts.push_back(cv::Point3f(-0.3, -0.3, 0));
+      objPts.push_back(cv::Point3f( 0.3, -0.3, 0));
+      objPts.push_back(cv::Point3f( 0.3,  0.3, 0));
+      objPts.push_back(cv::Point3f(-0.3,  0.3, 0));
+
+      std::pair<float, float> p1 = ann_det.p[0];
+      std::pair<float, float> p2 = ann_det.p[1];
+      std::pair<float, float> p3 = ann_det.p[2];
+      std::pair<float, float> p4 = ann_det.p[3];
+      imgPts.clear();
+      imgPts.push_back(cv::Point2f(p1.first, p1.second));
+      imgPts.push_back(cv::Point2f(p2.first, p2.second));
+      imgPts.push_back(cv::Point2f(p3.first, p3.second));
+      imgPts.push_back(cv::Point2f(p4.first, p4.second));
+      cv::Mat rvec2, tvec2;
+      cv::solvePnP(objPts, imgPts, cameraMatrix, distParam, rvec2, tvec2);
+      cv::Rodrigues(rvec2, r);
+
+      r = r.t();                    // rotation of inverse
+      cv::Mat new_tvec2(-r * tvec2); // translation of inverse
+
+      Eigen::Matrix3d wRo2;
+      wRo2 <<  r.at<double>(0,0), r.at<double>(0,1), r.at<double>(0,2), 
+               r.at<double>(1,0), r.at<double>(1,1), r.at<double>(1,2),
+               r.at<double>(2,0), r.at<double>(2,1), r.at<double>(2,2);
+      wRo_to_euler(wRo2, yaw, pitch, roll);
+
+      printf("AnnTag: %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f %3.4f\n", 
+        new_tvec2.at<double>(0), new_tvec2.at<double>(1), new_tvec2.at<double>(2),
+          yaw,pitch,roll);
     }
 
     // show the current image including any detections

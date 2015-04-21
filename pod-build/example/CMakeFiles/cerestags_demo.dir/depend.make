@@ -4,7 +4,6 @@
 example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o: ../example/Serial.cpp
 example/CMakeFiles/cerestags_demo.dir/Serial.cpp.o: ../example/Serial.h
 
-example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: .././AprilTags/RunningStats.h
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: ../example/Serial.h
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: ../example/cerestags_demo.cpp
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: /usr/local/Cellar/eigen/3.2.4/include/eigen3/Eigen/Cholesky
@@ -238,6 +237,7 @@ example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: /usr/local/include/o
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: /usr/local/include/opencv2/video/tracking.hpp
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: /usr/local/include/opencv2/video/video.hpp
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: include/AprilTags/FloatImage.h
+example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: include/AprilTags/RunningStats.h
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: include/AprilTags/Tag16h5.h
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: include/AprilTags/Tag25h7.h
 example/CMakeFiles/cerestags_demo.dir/cerestags_demo.cpp.o: include/AprilTags/Tag25h9.h

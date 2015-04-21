@@ -64,6 +64,8 @@ ostream
 utility
 -
 
+../AprilTags/RunningStats.h
+
 ../AprilTags/Segment.h
 cmath
 -

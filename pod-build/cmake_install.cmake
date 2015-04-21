@@ -48,6 +48,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
     "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/AprilTags/MathUtil.h"
     "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/AprilTags/pch.h"
     "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/AprilTags/Quad.h"
+    "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/AprilTags/RunningStats.h"
     "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/AprilTags/Segment.h"
     "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/AprilTags/Tag16h5.h"
     "/Users/sahilshah/Desktop/developer/ceres/apriltags-dev/AprilTags/Tag16h5_other.h"

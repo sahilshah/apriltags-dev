@@ -6,8 +6,6 @@
 
 #IncludeRegexTransform: 
 
-.././AprilTags/RunningStats.h
-
 /Users/sahilshah/Desktop/developer/ceres/apriltags-dev/example/Serial.cpp
 fcntl.h
 -
@@ -1345,6 +1343,8 @@ algorithm
 -
 vector
 -
+
+include/AprilTags/RunningStats.h
 
 include/AprilTags/Tag16h5.h
 
